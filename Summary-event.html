@@ -6,6 +6,36 @@
     <title>DOM event handlers</title>
 </head>
 <body>
-    <h1>Most common ways to set event handles</h1>
+    <h1 id="he">Final DOM Event Handlers</h1>
+    <h2 id="status-handler">default taxt</h2>
+    <p id="input-text-display">defauld input text</p>
+    <input id="input-field" type="text"> 
+    <button id="btn-update">Update</button>
+    <br>
+    <br>
+    <button onclick="handleOnclick()">handle Event by add onclick function</button>
+    <button id ="event-listener">handle event by addEventListener</button>
+    <script>
+        function handleOnclick(){
+            const statusHandler = document.getElementById('status-handler')
+            statusHandler.innerText = 'handled by function attached onclick attributes'
+        }
+        // option-2
+        document.getElementById('event-listener').addEventListener('click',function(){
+            const handlerStatus = document.getElementById('status-handler')
+            handlerStatus.innerText = 'text updated by add Event listener button'
+        })
+
+    // Option-2 recap 
+    document.getElementById('btn-update').addEventListener('click',function(){
+        const inputField = document.getElementById('input-field')
+        const inputText = inputField.value;
+        // console.log(inputField.value)
+
+        const p = document.getElementById('input-text-display')
+        p.innerText = inputText
+        inputField.value = ''
+    })
+    </script>
 </body>
 </html>
