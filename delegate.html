@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Delegate Event</title>
+</head>
+<body>
+    <h1>Explore Delegate Event Bubble</h1>
+    <section>
+        <ul id="list_container">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Porro, esse corrupti!</li>
+            <li class="item">Non, cum totam.</li>
+            <li class="item">Sunt, rerum ipsum.</li>
+            <li class="item">Adipisci, dolor quod!</li>
+            <li class="item">Perferendis, voluptates id.</li>
+        </ul>
+        <button id="item-add"> Add item</button>
+    </section>
+
+    <script>
+        // const items = document.getElementsByClassName('item')
+        // // delet item step -0
+        // for(const item of items){
+        //      item.addEventListener('click', function(event){
+        //         // console.log(event.target)
+        //         event.target.parentNode.removeChild(event.target)
+        //      })
+        // }
+        document.getElementById('list_container').addEventListener('click', function(event){
+            // console.log(event.target)
+            event.target.parentNode.removeChild(event.target)
+        })
+        // add or push item step 
+        const addItem = document.getElementById('item-add')
+        addItem.addEventListener('click', function(){
+            const listContainer = document.getElementById('list_container')
+            const li = document.createElement('li')
+            li.innerText = 'Brand new element added!'
+            // delet korar jnno ai step ta ..click kore 
+            li.classList.add('item')
+            listContainer.appendChild(li);
+        })
+    </script>
+</body>
+</html>
