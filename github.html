@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git hub delet</title>
+</head>
+<body>
+    <h1 id="secret-info">My Secret Info</h1>
+    <input id="input-field" type="text" placeholder="please type delet">
+    <button id="delete" disabled >Delete</button>
+
+    <script>
+        document.getElementById('input-field').addEventListener('keyup', function(event){
+            const text = event.target.value;
+            // console.log(text)
+            const deletButton = document.getElementById('delete')
+            if(text === 'delete'){
+                deletButton.removeAttribute('disabled')
+            }
+            else{
+                deletButton.setAttribute('disabled', true)
+            }
+        })
+        document.getElementById('delete').addEventListener('click', function(){
+            const deletInfo = document.getElementById('secret-info')
+            deletInfo.style.display = 'none'
+        })
+    </script>
+</body>
+</html>
